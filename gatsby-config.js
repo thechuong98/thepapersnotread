@@ -8,7 +8,7 @@ module.exports = {
       twitter: '@chuong5998',
     },
   },
-  pathPrefix: '/',
+  pathPrefix: '/demo-blog',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -85,7 +85,6 @@ module.exports = {
               `;
 
                 let html = edge.node.html;
-                // Hacky workaround for https://github.com/gaearon/overreacted.io/issues/65
                 html = html
                   .replace(/href="\//g, `href="${siteUrl}/`)
                   .replace(/src="\//g, `src="${siteUrl}/`)
@@ -126,7 +125,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: "Dan Abramov's Overreacted Blog RSS Feed",
+            title: "The Chuong Chu's Overreacted Blog RSS Feed",
           },
         ],
       },
