@@ -8,7 +8,7 @@ module.exports = {
       twitter: '@chuong5998',
     },
   },
-  pathPrefix: '/demo-blog',
+  pathPrefix: '/thepapersnotread',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -21,6 +21,20 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+              plugins: [
+                {
+                  resolve: `gatsby-remark-katex`,
+                  options: {
+                    // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
+                    strict: `ignore`,
+                  },
+                },
+              ],
+            },
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
